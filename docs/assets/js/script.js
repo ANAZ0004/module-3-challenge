@@ -13,17 +13,25 @@ const collectEmployees = function() {
   };
   employeesArray.push(employee);
 } while (confirm("Would you like to enter another employee?"))
+  employeesArray.sort((x, y) => x.lastName.localeCompare(y.lastName));
   return employeesArray;
 }
 
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
+  let totalSalary = 0;
+  let totalEmployees = employeesArray.length;
+  for (employee of employeesArray) {
+    totalSalary += parseInt(employee.salary);
+  }
+  console.log(totalSalary/totalEmployees);
 }
 
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
+  console.log(employeesArray[Math.floor(Math.random() * employeesArray.length)]);
 }
 
 /*
