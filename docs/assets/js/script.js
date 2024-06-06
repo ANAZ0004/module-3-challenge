@@ -32,7 +32,7 @@ const displayAverageSalary = function(employeesArray) {
   let totalSalary = 0;
   let totalEmployees = employeesArray.length;
   for (employee of employeesArray) {
-    totalSalary += parseInt(employee.salary);
+    totalSalary += employee.salary;
   }
   console.log(totalSalary/totalEmployees);
 }
