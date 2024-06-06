@@ -9,12 +9,21 @@ const collectEmployees = function() {
     const employee = {
     firstName: prompt("Please enter employee first name","John"),
     lastName: prompt("Please enter employee last name","Smith"),
-    salary: prompt("Please enter employee salary","50000")
+    salary: getSalary()
   };
   employeesArray.push(employee);
 } while (confirm("Would you like to enter another employee?"))
   employeesArray.sort((x, y) => x.lastName.localeCompare(y.lastName));
   return employeesArray;
+}
+
+const getSalary = function () {
+  salary = prompt("Please enter employee salary","50000")
+  if (isNaN(salary)) {
+    return 0
+  } else {
+    return parseInt(salary)
+  }
 }
 
 // Display the average salary
